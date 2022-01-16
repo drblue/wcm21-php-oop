@@ -1,0 +1,19 @@
+.env
+*-nogit/
+npm-debug.log
+yarn-error.log
+
+composer.phar
+/*/**/vendor/
+node_modules/
+
+# Laravel 5
+public/storage
+
+# Laravel
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
