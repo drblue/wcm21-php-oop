@@ -12,10 +12,24 @@
 
 // Klasser skrivs alltid i singular form och med UpperCamelCase / PascalCase
 class Car {
-	public $manufacturer = "N/A";
-	public $model = "N/A";
-	public $year = "N/A";
+	public $manufacturer;
+	public $model;
+	public $year;
 	public $awd = false;
+
+	public function getInfo() {
+		$msg = "Car is a";
+		if ($this->manufacturer) {
+			$msg .= " {$this->manufacturer}";
+		}
+		if ($this->model) {
+			$msg .= " {$this->model}";
+		}
+		if ($this->year) {
+			$msg .= " {$this->year}";
+		}
+		return "{$msg}.<br>";
+	}
 }
 
 class MotorCycle {}
@@ -31,48 +45,34 @@ $carTwo->manufacturer = "Doge";
 $carTwo->model = "Viper";
 
 $carThree = new Car();
+$carThree->model = "Batmobile";
+
+$mc = new MotorCycle();
 
 // echo "<pre>";
 // var_dump($carOne);
 // var_dump($carTwo);
 // echo "</pre>";
 
-function getCarInfo($car) {
-	if (!$car instanceof Car) {
-		return "That ain't a car!";
-	}
+$garage = [
+	$carOne,
+	$carTwo,
+	$carThree,
+];
 
-	return "Car is a $car->manufacturer $car->model of year $car->year.<br>";
+foreach($garage as $car) {
+	echo $car->getInfo();
 }
 
-echo "<h2>Car One</h2>";
-echo getCarInfo($carOne);
+// echo "<pre>";
 
-echo "<h2>Car Two</h2>";
-echo getCarInfo($carTwo);
+// echo "<h2>Car One</h2>";
+// echo $carOne->getInfo();
 
-echo "<h2>Car Three</h2>";
-echo getCarInfo($carThree);
+// echo "<h2>Car Two</h2>";
+// echo $carTwo->getInfo();
 
-$mc = new MotorCycle();
-echo "<h2>Mc</h2>";
-echo getCarInfo($mc);
+// echo "<h2>Car Three</h2>";
+// echo $carThree->getInfo();
 
-echo "<h2>42</h2>";
-echo getCarInfo(42);
-
-// echo "Car One is a " . get_class($carOne) . ".<br>";
-
-// echo "Is Car One a Car? ";
-// if ($carOne instanceof Car) {
-// 	echo "yep";
-// } else {
-// 	echo "that aint a car of mine";
-// }
-
-// $mc = new MotorCycle();
-// if ($mc instanceof Car) {
-// 	echo "yep";
-// } else {
-// 	echo "that aint a car of mine";
-// }
+// echo "</pre>";
