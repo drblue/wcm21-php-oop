@@ -2,7 +2,7 @@
 
 require('includes/House.php');
 
-$house1 = new House(12, 600, "Drottninggatan 4B, Malmö");
+$house1 = new House(12, 600, "Drottninggatan 4B, Malmö", 14);
 
 echo "<pre>";
 var_dump($house1);
