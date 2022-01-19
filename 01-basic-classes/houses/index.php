@@ -12,7 +12,7 @@ echo "<pre>";
 var_dump($house2);
 echo "</pre>";
 
-$house3 = new House(1, -300, "", false);
+$house3 = new House(3.14159, -300, "", false);
 echo "<pre>";
 var_dump($house3);
 echo "</pre>";
