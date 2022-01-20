@@ -5,19 +5,22 @@ class Car {
 	protected $model;
 	protected $year;
 	protected $registrationNumber;
+	protected $mileage;
 
 	public function __construct(
 		string $manufacturer,
 		string $model,
-		int $year
+		int $year,
+		int $mileage = 0
 	) {
 		$this->setManufacturer($manufacturer);
 		$this->setModel($model);
 		$this->setYear($year);
+		$this->setMileage($mileage);
 	}
 
 	public function getInfo(): string {
-		return "Jag är en {$this->getManufacturer()} {$this->getModel()} av årsmodell {$this->getYear()} med registreringsnummer {$this->getRegistrationNumber()}.";
+		return "Jag är en {$this->getManufacturer()} {$this->getModel()} av årsmodell {$this->getYear()} med registreringsnummer {$this->getRegistrationNumber()} och mätarställning {$this->getMileage()} km.";
 	}
 
 	/* manufacturer */
@@ -27,6 +30,15 @@ class Car {
 
 	protected function setManufacturer(string $manufacturer) {
 		$this->manufacturer = $manufacturer;
+	}
+
+	/* milage */
+	public function getMileage(): int {
+		return $this->mileage;
+	}
+
+	protected function setMileage(int $mileage) {
+		$this->mileage = $mileage;
 	}
 
 	/* model */
