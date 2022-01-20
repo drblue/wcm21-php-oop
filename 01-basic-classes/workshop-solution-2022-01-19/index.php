@@ -13,6 +13,11 @@ $car->setRegistrationNumber("GOT CA\$H?");
 array_push($cars, $car);
 
 $car = new Car("Tesla", "Model 3", 2020, 58000);
+$car->setRegistrationNumber("WATT");
+array_push($cars, $car);
+
+$car = new Car("Tesla", "Roadster 2"); // 2022
+$car->setRegistrationNumber("NEED4SPEED");
 array_push($cars, $car);
 
 echo "<pre>";

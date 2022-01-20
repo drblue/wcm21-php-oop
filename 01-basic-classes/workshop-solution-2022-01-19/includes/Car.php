@@ -10,7 +10,7 @@ class Car {
 	public function __construct(
 		string $manufacturer,
 		string $model,
-		int $year,
+		$year = null,
 		int $mileage = 0
 	) {
 		$this->setManufacturer($manufacturer);
@@ -54,8 +54,16 @@ class Car {
 	public function getYear(): int {
 		return $this->year;
 	}
-	protected function setYear(int $year) {
-		$this->year = $year;
+	protected function setYear($year) {
+		if (is_null($year)) {
+			$this->year = intval(date("Y"));
+		} else {
+			$this->year = $year;
+		}
+
+		// $this->year = is_null($year)
+		// 	? intval(date("Y"))
+		// 	: $year;
 	}
 
 	/* registrationNumber */
