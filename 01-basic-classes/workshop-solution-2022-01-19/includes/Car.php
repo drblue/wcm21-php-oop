@@ -6,6 +6,9 @@ class Car {
 	protected $year;
 	protected $registrationNumber;
 	protected $mileage;
+	public $transmission;
+	public static $TRANSMISSION_AUTOMATIC = "automatic";
+	public static $TRANSMISSION_MANUAL = "manual";
 
 	public function __construct(
 		string $manufacturer,
@@ -17,6 +20,14 @@ class Car {
 		$this->setModel($model);
 		$this->setYear($year);
 		$this->setMileage($mileage);
+	}
+
+	public function isAutomaticTransmission() {
+		return $this->transmission === static::$TRANSMISSION_AUTOMATIC;
+	}
+
+	public function isManualTransmission() {
+		return $this->transmission === static::$TRANSMISSION_MANUAL;
 	}
 
 	public function getInfo(): string {
