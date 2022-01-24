@@ -3,9 +3,15 @@
 class Account {
 	protected $accountNumber;
 	protected $balance;
+	protected $owner;
 
-	public function __construct(string $_accountNumber, float $_balance = 0) {
+	public function __construct(
+		string $_accountNumber,
+		string $_owner,
+		float $_balance = 0
+	) {
 		$this->accountNumber = $_accountNumber;
+		$this->owner = $_owner;
 		$this->balance = $_balance;
 	}
 
@@ -24,5 +30,9 @@ class Account {
 
 	public function getBalance(): float {
 		return $this->balance;
+	}
+
+	public function getOwner(): string {
+		return $this->owner;
 	}
 }
