@@ -1,6 +1,7 @@
 <?php
 
-require('includes/Account.php');
+require_once('includes/Account.php');
+require_once('includes/Transaction.php');
 require('partials/header.php');
 
 /**
@@ -17,15 +18,24 @@ $pelles_konto->deposit(100, 'Sålde iPhone till "sista priset kompis" på Blocke
 $pelles_konto->deposit(50, 'Återbetalning. H&M');
 $pelles_konto->withdraw(79.99, 'Lunch');
 
-echo "<pre>";
-var_dump($pelles_konto);
-echo "</pre>";
-
 /**
  * Mr Beast's konto
  */
 $beasts_konto = new Account('1337-1337', 'Mr Beast', 1337000);
 $beasts_konto->withdraw(1337000, 'LOL');
+
+echo "<pre>";
+
+echo "<h3>Johans konto</h3>";
+var_dump($johans_konto);
+
+echo "<h3>Pelles konto</h3>";
+var_dump($pelles_konto);
+
+echo "<h3>Beasts konto</h3>";
+var_dump($beasts_konto);
+
+echo "</pre>";
 
 $accounts = [
 	$johans_konto,  // object(Account)
@@ -50,8 +60,8 @@ foreach ($accounts as $account) {
 	echo "<tbody>";
 	foreach ($account->getTransactions() as $transaction) {
 		echo "<tr>";
-		echo "  <td>{$transaction['amount']} kr</td>";
-		echo "  <td>{$transaction['description']}</td>";
+		echo "  <td>{$transaction->getAmount()} kr</td>";
+		echo "  <td>{$transaction->getDescription()}</td>";
 		echo "</tr>";
 	}
 	echo "</tbody>";

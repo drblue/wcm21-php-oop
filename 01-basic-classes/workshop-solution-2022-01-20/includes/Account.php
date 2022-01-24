@@ -1,5 +1,7 @@
 <?php
 
+require_once('Transaction.php');
+
 class Account {
 	protected $accountNumber;
 	protected $balance;
@@ -17,20 +19,17 @@ class Account {
 	}
 
 	public function deposit(float $amount, string $description) {
-		// $this->balance = $this->balance + $amount;
 		$this->balance += $amount;
-		array_push($this->transactions, [
-			'amount' => $amount,
-			'description' => $description
-		]);
+
+		$transaction = new Transaction($amount, $description);
+		array_push($this->transactions, $transaction);
 	}
 
 	public function withdraw(float $amount, string $description) {
 		$this->balance -= $amount;
-		array_push($this->transactions, [
-			'amount' => -$amount,
-			'description' => $description
-		]);
+
+		$transaction = new Transaction(-$amount, $description);
+		array_push($this->transactions, $transaction);
 	}
 
 	public function getAccountNumber(): string {
