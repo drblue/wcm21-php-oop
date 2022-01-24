@@ -23,6 +23,7 @@ $pelles_konto->withdraw(79.99, 'Lunch');
  */
 $beasts_konto = new Account('1337-1337', 'Mr Beast', 1337000);
 $beasts_konto->withdraw(1337000, 'LOL');
+$beasts_konto->deposit(50);
 
 echo "<pre>";
 

@@ -18,14 +18,14 @@ class Account {
 		$this->balance = $_balance;
 	}
 
-	public function deposit(float $amount, string $description) {
+	public function deposit(float $amount, string $description = null) {
 		$this->balance += $amount;
 
 		$transaction = new Transaction($amount, $description);
 		array_push($this->transactions, $transaction);
 	}
 
-	public function withdraw(float $amount, string $description) {
+	public function withdraw(float $amount, string $description = null) {
 		$this->balance -= $amount;
 
 		$transaction = new Transaction(-$amount, $description);

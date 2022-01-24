@@ -9,11 +9,19 @@ class Transaction {
 		$this->description = $_description;
 	}
 
+	public function hasDescription() {
+		return !is_null($this->description);
+	}
+
 	public function getAmount() {
 		return $this->amount;
 	}
 
 	public function getDescription() {
+		if (!$this->description) {
+			return "No description provided";
+		}
+
 		return $this->description;
 	}
 }
