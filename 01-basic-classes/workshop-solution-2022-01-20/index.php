@@ -41,7 +41,7 @@ foreach ($accounts as $account) {
 	echo "<h4>Transactions</h4>";
 	echo "<ol>";
 	foreach ($account->getTransactions() as $transaction) {
-		echo "<li>{$transaction[0]} kr - {$transaction[1]}</li>";
+		echo "<li>{$transaction['amount']} kr - {$transaction['description']}</li>";
 	}
 	echo "</ol>";
 
