@@ -16,15 +16,17 @@ class Account {
 		$this->balance = $_balance;
 	}
 
-	public function deposit(float $amount) {
+	public function deposit(float $amount, string $description) {
 		// $this->balance = $this->balance + $amount;
 		$this->balance += $amount;
-		array_push($this->transactions, $amount);
+		$transaction = [$amount, $description];
+		array_push($this->transactions, $transaction);
 	}
 
-	public function withdraw(float $amount) {
+	public function withdraw(float $amount, string $description) {
 		$this->balance -= $amount;
-		array_push($this->transactions, -$amount);
+		$transaction = [-$amount, $description];
+		array_push($this->transactions, $transaction);
 	}
 
 	public function getAccountNumber(): string {

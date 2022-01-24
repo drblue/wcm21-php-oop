@@ -6,21 +6,25 @@ require('includes/Account.php');
  * Johans konto
  */
 $johans_konto = new Account('1234-56,789,012-3', 'Johan Nordström', 500);
-$johans_konto->withdraw(49);
+$johans_konto->withdraw(49, 'Caffe Latte');
 
 /**
  * Pelles konto
  */
 $pelles_konto = new Account('2345-67,890,123-4', 'Pelle Svanslös');
-$pelles_konto->deposit(100);
-$pelles_konto->deposit(50);
-$pelles_konto->withdraw(79);
+$pelles_konto->deposit(100, 'Sålde iPhone till "sista priset kompis" på Blocket');
+$pelles_konto->deposit(50, 'Återbetalning. H&M');
+$pelles_konto->withdraw(79.99, 'Lunch');
+
+echo "<pre>";
+var_dump($pelles_konto);
+echo "</pre>";
 
 /**
  * Mr Beast's konto
  */
 $beasts_konto = new Account('1337-1337', 'Mr Beast', 1337000);
-$beasts_konto->withdraw(1337000);
+$beasts_konto->withdraw(1337000, 'LOL');
 
 $accounts = [
 	$johans_konto,
@@ -37,7 +41,7 @@ foreach ($accounts as $account) {
 	echo "<h4>Transactions</h4>";
 	echo "<ol>";
 	foreach ($account->getTransactions() as $transaction) {
-		echo "<li>{$transaction}</li>";
+		echo "<li>{$transaction[0]} kr - {$transaction[1]}</li>";
 	}
 	echo "</ol>";
 
