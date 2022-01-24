@@ -20,6 +20,7 @@ $pelles_konto->withdraw(79);
  * Mr Beast's konto
  */
 $beasts_konto = new Account('1337-1337', 'Mr Beast', 1337000);
+$beasts_konto->withdraw(1337000);
 
 $accounts = [
 	$johans_konto,
@@ -32,6 +33,13 @@ foreach ($accounts as $account) {
 	echo "<h2>{$account->getAccountNumber()}</h2>";
 	echo "<h3>Owner: {$account->getOwner()}</h3>";
 	echo "<p><strong>Balance:</strong> {$account->getBalance()}</p>";
+
+	echo "<h4>Transactions</h4>";
+	echo "<ol>";
+	foreach ($account->getTransactions() as $transaction) {
+		echo "<li>{$transaction}</li>";
+	}
+	echo "</ol>";
 
 	echo "<hr />";
 }

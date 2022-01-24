@@ -4,6 +4,7 @@ class Account {
 	protected $accountNumber;
 	protected $balance;
 	protected $owner;
+	protected $transactions = [];
 
 	public function __construct(
 		string $_accountNumber,
@@ -18,10 +19,12 @@ class Account {
 	public function deposit(float $amount) {
 		// $this->balance = $this->balance + $amount;
 		$this->balance += $amount;
+		array_push($this->transactions, $amount);
 	}
 
 	public function withdraw(float $amount) {
 		$this->balance -= $amount;
+		array_push($this->transactions, -$amount);
 	}
 
 	public function getAccountNumber(): string {
@@ -34,5 +37,9 @@ class Account {
 
 	public function getOwner(): string {
 		return $this->owner;
+	}
+
+	public function getTransactions() {
+		return $this->transactions;
 	}
 }
