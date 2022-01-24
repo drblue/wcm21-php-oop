@@ -1,6 +1,7 @@
 <?php
 
 require('includes/Account.php');
+require('partials/header.php');
 
 /**
  * Johans konto
@@ -27,9 +28,9 @@ $beasts_konto = new Account('1337-1337', 'Mr Beast', 1337000);
 $beasts_konto->withdraw(1337000, 'LOL');
 
 $accounts = [
-	$johans_konto,
-	$pelles_konto,
-	$beasts_konto
+	$johans_konto,  // object(Account)
+	$pelles_konto,  // object(Account)
+	$beasts_konto   // object(Account)
 ];
 
 echo "<h1>Kundfientlig bank nr 1</h1>";
@@ -39,11 +40,24 @@ foreach ($accounts as $account) {
 	echo "<p><strong>Balance:</strong> {$account->getBalance()}</p>";
 
 	echo "<h4>Transactions</h4>";
-	echo "<ol>";
+	echo "<table class=\"table\">";
+
+	echo "<thead>";
+	echo "  <th>Amount</th>";
+	echo "  <th>Description</th>";
+	echo "</thead>";
+
+	echo "<tbody>";
 	foreach ($account->getTransactions() as $transaction) {
-		echo "<li>{$transaction['amount']} kr - {$transaction['description']}</li>";
+		echo "<tr>";
+		echo "  <td>{$transaction['amount']} kr</td>";
+		echo "  <td>{$transaction['description']}</td>";
+		echo "</tr>";
 	}
-	echo "</ol>";
+	echo "</tbody>";
+	echo "</table>";
 
 	echo "<hr />";
 }
+
+require('partials/footer.php');
