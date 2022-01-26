@@ -46,6 +46,13 @@ class CarList {
 	}
 
 	public function removeCarByRegistrationNumber(string $registrationNumber): bool {
+		// A more efficient (and also more advanced) way to remove an element from an array
+		// $this->cars = array_filter($this->cars, function($car) use($registrationNumber) {
+		// 	return $car->getRegistrationNumber() !== $registrationNumber;
+		// });
+
+		// return true;
+
 		// find car by registration number
 		$car = $this->findByRegistrationNumber($registrationNumber);
 		if (!$car) {
