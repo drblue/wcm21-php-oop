@@ -27,7 +27,7 @@ class CarList {
 		return true;
 	}
 
-	public function findByRegistrationNumber($registrationNumber) {
+	public function findByRegistrationNumber(string $registrationNumber) {
 		foreach ($this->cars as $car) {
 			if ($car->getRegistrationNumber() === $registrationNumber) {
 				return $car;
@@ -45,4 +45,20 @@ class CarList {
 		return $this->name;
 	}
 
+	public function removeCarByRegistrationNumber(string $registrationNumber): bool {
+		// find car by registration number
+		$car = $this->findByRegistrationNumber($registrationNumber);
+		if (!$car) {
+			// DUDE - WHERE'S MY CAR?!
+			return false;
+		}
+
+		// find position (index) of car
+		$index = array_search($car, $this->cars);
+
+		// remove element at $index from list
+		array_splice($this->cars, $index, 1);
+
+		return true;
+	}
 }
