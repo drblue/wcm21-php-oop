@@ -10,7 +10,7 @@ class Account {
 
 	public function __construct(
 		string $_accountNumber,
-		string $_owner,
+		Person $_owner,
 		float $_balance = 0
 	) {
 		$this->accountNumber = $_accountNumber;
@@ -40,7 +40,7 @@ class Account {
 		return $this->balance;
 	}
 
-	public function getOwner(): string {
+	public function getOwner(): Person {
 		return $this->owner;
 	}
 
