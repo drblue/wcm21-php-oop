@@ -24,6 +24,20 @@ class CarList {
 		return true;
 	}
 
+	public function findByRegistrationNumber($registrationNumber) {
+		foreach ($this->cars as $car) {
+			if ($car->getRegistrationNumber() === $registrationNumber) {
+				return $car;
+			}
+		}
+
+		return false;
+	}
+
+	public function getCars() {
+		return $this->cars;
+	}
+
 	public function getName(): string {
 		return $this->name;
 	}

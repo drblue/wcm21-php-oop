@@ -42,19 +42,27 @@ if ($cars->addCar($car)) {
 	echo "FEL! Kunde inte lägga till {$car->getRegistrationNumber()} i listan över bilar.<br>";
 }
 
-pre($cars, "Cars");
-
-
-/*
 // get all cars
-$cars->getCars();
-
-
-// remove a car
-$cars->removeCar("FUO102");
+echo "<h2>{$cars->getName()}</h2>";
+echo "<ul>";
+foreach ($cars->getCars() as $car) {
+	echo "<li>{$car->getInfo()}</li>";
+}
+echo "</ul>";
 
 // find a car
-$foundWatt = $cars->findCar("WATT");
+$watt = $cars->findByRegistrationNumber("WATT");
+pre($watt, "WATT");
+
+$gas = $cars->findByRegistrationNumber("ILOVEGAS");
+pre($gas, "ILOVEGAS");
+
+$lolgas = $cars->findByRegistrationNumber("LOLGAS");
+pre($lolgas, "LOLGAS");
+
+/*
+// remove a car
+$cars->removeCar("FUO102");
 */
 
 

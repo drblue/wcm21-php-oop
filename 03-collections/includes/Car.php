@@ -98,6 +98,6 @@ class Car {
 	}
 
 	public function getInfo() {
-		return "Jag är en {$this->getManufacturer()} {$this->getModel()} av årsmodell {$this->getYear()} ({$this->getAge()} år gammal) med registreringsnummer {$this->getRegistrationNumber()} och mätarställning {$this->getMilage()} km.";
+		return "{$this->getManufacturer()} {$this->getModel()}, årsmodell {$this->getYear()} ({$this->getAge()} år gammal), registreringsnummer {$this->getRegistrationNumber()}, mätarställning {$this->getMilage()} km";
 	}
 }
