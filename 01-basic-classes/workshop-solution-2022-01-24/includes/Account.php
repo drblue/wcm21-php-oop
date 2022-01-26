@@ -5,16 +5,13 @@ require_once('Transaction.php');
 class Account {
 	protected $accountNumber;
 	protected $balance;
-	protected $owner;
 	protected $transactions = [];
 
 	public function __construct(
 		string $_accountNumber,
-		Person $_owner,
 		float $_balance = 0
 	) {
 		$this->accountNumber = $_accountNumber;
-		$this->owner = $_owner;
 		$this->balance = $_balance;
 	}
 
@@ -40,8 +37,8 @@ class Account {
 		return $this->balance;
 	}
 
-	public function getOwner(): Person {
-		return $this->owner;
+	public function getTotalTransactions() {
+		return count($this->transactions);
 	}
 
 	public function getTransactions() {
