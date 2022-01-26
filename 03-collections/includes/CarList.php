@@ -15,7 +15,10 @@ class CarList {
 	}
 
 	public function addCar(Car $car): bool {
-		// TODO: Check that the car isn't already in the list before adding it
+		// Check that the car isn't already in the list before adding it
+		if (in_array($car, $this->cars)) {
+			return false;
+		}
 
 		// Add car to list
 		array_push($this->cars, $car);

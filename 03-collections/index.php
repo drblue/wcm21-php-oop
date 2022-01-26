@@ -22,6 +22,13 @@ if ($cars->addCar($car)) {
 	echo "FEL! Kunde inte lägga till {$car->getRegistrationNumber()} i listan över bilar.<br>";
 }
 
+// add car to list of cars
+if ($cars->addCar($car)) {
+	echo "Lade till {$car->getRegistrationNumber()} i listan över bilar.<br>";
+} else {
+	echo "FEL! Kunde inte lägga till {$car->getRegistrationNumber()} i listan över bilar.<br>";
+}
+
 
 $car = new Car("Nissan", "Qashqai", 2019, 5400);
 $car->setRegistrationNumber("FUO102");
