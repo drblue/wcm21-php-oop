@@ -14,15 +14,15 @@ $johans_konto->withdraw(49, 'Caffe Latte');
  * Pelles konto
  */
 $pelles_konto = new Account('2345-67,890,123-4', 'Pelle Svanslös');
-$pelles_konto->deposit(100, 'Sålde iPhone till "sista priset kompis" på Blocket');
-$pelles_konto->deposit(50, 'Återbetalning. H&M');
+$pelles_konto->deposit(100, 'Sålde iPhone till "sista priset kompis" på Blocket', '2021-12-24');
+$pelles_konto->deposit(50, 'Återbetalning. H&M', '2022-01-20');
 $pelles_konto->withdraw(79.99, 'Lunch');
 
 /**
  * Mr Beast's konto
  */
 $beasts_konto = new Account('1337-1337', 'Mr Beast', 1337000);
-$beasts_konto->withdraw(1337000, 'LOL');
+$beasts_konto->withdraw(1337000, 'LOL', '2022-01-01');
 $beasts_konto->deposit(50);
 
 echo "<pre>";
@@ -54,6 +54,7 @@ foreach ($accounts as $account) {
 	echo "<table class=\"table\">";
 
 	echo "<thead>";
+	echo "  <th>Date</th>";
 	echo "  <th>Amount</th>";
 	echo "  <th>Description</th>";
 	echo "</thead>";
@@ -61,6 +62,7 @@ foreach ($accounts as $account) {
 	echo "<tbody>";
 	foreach ($account->getTransactions() as $transaction) {
 		echo "<tr>";
+		echo "  <td>{$transaction->getDate()}</td>";
 		echo "  <td>{$transaction->getAmount()} kr</td>";
 		echo "  <td>{$transaction->getDescription()}</td>";
 		echo "</tr>";
