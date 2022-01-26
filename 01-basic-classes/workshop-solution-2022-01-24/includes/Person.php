@@ -18,6 +18,16 @@ class Person {
 		return $this->accounts;
 	}
 
+	public function getTotalBalance() {
+		$total_balance = 0;
+
+		foreach ($this->accounts as $account) {
+			$total_balance = $total_balance + $account->getBalance();
+		}
+
+		return $total_balance;
+	}
+
 	public function getFirstName() {
 		return $this->first_name;
 	}

@@ -102,6 +102,8 @@ foreach ($people as $person) {
 
 	}
 
+	echo "<strong>Totalt kontosaldo:</strong> {$person->getTotalBalance()} kr";
+
 	echo "<hr />";
 }
 
