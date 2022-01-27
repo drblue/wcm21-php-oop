@@ -1,10 +1,7 @@
 <?php
 
-require('includes/config.php');
-require('includes/db.php');
-require('Models/User.php');
-require('Models/Employee.php');
-require('Models/Student.php');
+// bootstrap the app! 🥾
+require('core/bootstrap.php');
 
 // get a new db handle
 $dbh = db_init();
