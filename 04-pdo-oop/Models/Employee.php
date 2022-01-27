@@ -1,9 +1,9 @@
 <?php
 
 class Employee extends User {
-	protected $external;
+	protected bool $external;
 
-	public function isExternal() {
-		return $this->external == 1;
+	public function isExternal(): bool {
+		return $this->external;
 	}
 }
