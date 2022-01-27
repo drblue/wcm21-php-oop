@@ -1,12 +1,12 @@
 <?php
 
 // config
-require('config.php');
+require('./core/config.php');
 
 // database
-require('db.php');
+require('./core/db.php');
 
 // models
-require('../Models/User.php');
-require('../Models/Employee.php');
-require('../Models/Student.php');
+require('./Models/User.php');
+require('./Models/Employee.php');
+require('./Models/Student.php');
