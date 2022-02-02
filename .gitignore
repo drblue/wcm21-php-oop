@@ -1,5 +1,6 @@
 .env
 *-nogit/
+00-sourcefiles/
 npm-debug.log
 yarn-error.log
 
