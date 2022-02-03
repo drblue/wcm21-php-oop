@@ -6,4 +6,8 @@ class User extends Model {
 	public string $last_name;
 
 	public static $table = 'users';
+
+	public function getFullName() {
+		return "{$this->first_name} {$this->last_name}";
+	}
 }
