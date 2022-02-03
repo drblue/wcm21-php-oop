@@ -1,0 +1,12 @@
+{
+    "name": "jn/07-composer",
+    "authors": [
+        {
+            "name": "Johan Nordström",
+            "email": "johan@digitalvillage.se"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^2.56"
+    }
+}
