@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Models;
+
+use \PDO;
+
 class Model {
 	public static $dbh;
 	public static $table;

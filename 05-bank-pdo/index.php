@@ -3,6 +3,8 @@
 require('bootstrap/app.php');
 include('partials/header.php');
 
+use App\Models\User;
+
 $users = User::getAll();
 
 ?>

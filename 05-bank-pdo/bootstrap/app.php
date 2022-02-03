@@ -8,5 +8,5 @@ require(ROOT_PATH . '/config/app.php');
 // helpful helpers
 require(ROOT_PATH . '/includes/helpers.php');
 
-// models
-require(ROOT_PATH . '/app/Models/index.php');
+// autoload
+require(ROOT_PATH . '/vendor/autoload.php');

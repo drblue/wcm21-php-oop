@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 class Account extends Model {
 	public int $id;
 	public string $accountnumber;
