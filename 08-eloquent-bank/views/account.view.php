@@ -2,7 +2,7 @@
 include(ROOT_PATH . '/views/partials/header.php');
 ?>
 
-	<h1><?php echo $user->getFullName(); ?></h1>
+	<h1><?php echo $account->user->getFullName(); ?></h1>
 	<h2><?php echo $account->accountnumber; ?></h2>
 
 	<p class="display-3 my-3">

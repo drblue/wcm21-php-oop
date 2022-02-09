@@ -5,17 +5,17 @@ require('./bootstrap/init.php');
 use App\Models\Account;
 use App\Models\User;
 
-if (empty($_REQUEST['id']) || empty($_REQUEST['user_id'])) {
+if (empty($_REQUEST['id'])) {
 	die("No access for you!");
 }
-
-// get the user
-$user_id = $_REQUEST['user_id'];
-$user = User::find($user_id);
 
 // get user's account
 $account_id = $_REQUEST['id'];
 $account = Account::find($account_id);
+
+// get the user
+// $user = User::find($account->user_id);
+// $user = $account->user;
 
 // do we have a form request?
 if (!empty($_POST['amount'])) {

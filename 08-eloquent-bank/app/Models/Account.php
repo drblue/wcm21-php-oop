@@ -11,4 +11,11 @@ class Account extends Model {
 	 * @var bool
 	 */
 	public $timestamps = false;
+
+	/**
+	 * Get the user that owns this account.
+	 */
+	public function user() {
+		return $this->belongsTo(User::class);
+	}
 }
