@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model {
 
 	/**
-	 * Get the user's associated phone
+	 * Get the user's associated phones
 	 */
-	public function phone() {
-		return $this->hasOne(Phone::class);  // SELECT * FROM phones WHERE user_id = 1 LIMIT 1
+	public function phones() {
+		return $this->hasMany(Phone::class);  // SELECT * FROM phones WHERE user_id = 1
 	}
 
 	/**

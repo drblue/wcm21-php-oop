@@ -21,8 +21,10 @@ include(ROOT_PATH . '/views/partials/header.php');
 					</td>
 					<td>
 						<?php
-							if ($user->phone) {
-								echo $user->phone->model;
+							if (count($user->phones) > 0) {
+								foreach ($user->phones as $phone) {
+									echo $phone->model . "<br>";
+								}
 							} else {
 								echo "-";
 							}
