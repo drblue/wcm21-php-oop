@@ -2,6 +2,7 @@
 
 require('./bootstrap/init.php');
 
+use App\Models\Phone;
 use App\Models\User;
 
 // here be logic

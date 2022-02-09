@@ -20,7 +20,13 @@ include(ROOT_PATH . '/views/partials/header.php');
 						<?php echo $user->getFullName(); ?>
 					</td>
 					<td>
-						Here be phone
+						<?php
+							if ($user->phone) {
+								echo $user->phone->model;
+							} else {
+								echo "-";
+							}
+						?>
 					</td>
 				</tr>
 			<?php endforeach; ?>
