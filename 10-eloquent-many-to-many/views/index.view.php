@@ -24,7 +24,15 @@ include(ROOT_PATH . '/views/partials/header.php');
 						<?php echo $student->email; ?>
 					</td>
 					<td>
-
+						<?php
+							if (count($student->courses) > 0) {
+								foreach($student->courses as $course) {
+									echo $course->name . "<br>";
+								}
+							} else {
+								echo "No courses";
+							}
+						?>
 					</td>
 				</tr>
 			<?php endforeach; ?>
@@ -49,7 +57,15 @@ include(ROOT_PATH . '/views/partials/header.php');
 						<?php echo $course->name; ?>
 					</td>
 					<td>
-
+						<?php
+							if (count($course->students) > 0) {
+								foreach($course->students as $student) {
+									echo $student->name . "<br>";
+								}
+							} else {
+								echo "No students";
+							}
+						?>
 					</td>
 				</tr>
 			<?php endforeach; ?>

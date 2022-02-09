@@ -20,4 +20,10 @@ class Course extends Model {
 	 */
 	protected $fillable = ['name'];
 
+	/**
+	 * Get all students for this course.
+	 */
+	public function students() {
+		return $this->belongsToMany(Student::class);
+	}
 }
