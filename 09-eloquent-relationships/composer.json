@@ -1,0 +1,17 @@
+{
+    "name": "wcm21-php-oop/09-eloquent-relationships",
+    "authors": [
+        {
+            "name": "Johan Nordström",
+            "email": "johan@digitalvillage.se"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\Models\\": "app/Models"
+        }
+    },
+    "require": {
+        "illuminate/database": "^8.82"
+    }
+}
